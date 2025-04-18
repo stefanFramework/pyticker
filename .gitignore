@@ -2,9 +2,9 @@
 .idea/*
 *.bak
 .DS_Store
-storage/*
 !storage/data/.gitkeep
 !storage/logs/.gitkeep
+#storage/*
 app/.idea/*
 
 
