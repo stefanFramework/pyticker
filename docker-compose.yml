@@ -1,25 +1,25 @@
 services:
-  database:
-    image: postgres:14
-    container_name: fastapi_db
-    volumes:
-      - ./storage/data/postgresql:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=fastapi_db
-    restart: always
-    ports:
-      - "5432:5432"
+#  database:
+#    image: postgres:14
+#    container_name: fastapi_db
+#    volumes:
+#      - ./storage/data/postgresql:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_USER=admin
+#      - POSTGRES_PASSWORD=admin
+#      - POSTGRES_DB=fastapi_db
+#    restart: always
+#    ports:
+#      - "5432:5432"
 
   app:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: fastapi_app
+    container_name: pyticker
     volumes:
       - .:/app
     ports:
       - "8000:8000"
-    depends_on:
-      - database
+#    depends_on:
+#      - database
